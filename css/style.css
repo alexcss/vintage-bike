@@ -178,6 +178,12 @@ p, ul, ol{
 	     -o-background-size: cover;
 	        background-size: cover;
 }
+@media (max-width: 767px){
+	.ba-bike__thumb{
+		position: relative;
+		min-height: 300px;
+	}
+}
 .ba-bike__thumb--r {
 	left: auto;
 	right: 0;
@@ -324,11 +330,17 @@ p, ul, ol{
 	background: #F7F7F7;
 	font-size: 13px;
 }
+
 .ba-footer address {
 	font-style: normal;
 }
 .ba-socials{
 	text-align: center;
+}
+@media (max-width: 767px){
+	.ba-socials{
+		margin: 20px 0;
+	}
 }
 .ba-socials a{
 	display: inline-block;
@@ -361,4 +373,9 @@ p, ul, ol{
 }
 .ba-copyright img{
 	vertical-align: middle;
+}
+@media (max-width: 767px){
+	.ba-footer, .ba-copyright{
+		text-align: center;
+	}
 }
