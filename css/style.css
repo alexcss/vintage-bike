@@ -164,9 +164,25 @@ p, ul, ol{
 	margin-left: 30px;
 	width: 60px;
 }
+.ba-overlay{
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 998;
+	background: rgba(0,0,0,.4);
+	-webkit-transition: opacity .2s, visibility .2s;
+	   -moz-transition: opacity .2s, visibility .2s;
+	        transition: opacity .2s, visibility .2s;
+}
 @media (max-width: 767px) {
 	.ba-menu-toggle{
 		display: inline-block;
+		position: relative;
+		z-index: 999;
 	}
 	.ba-main-menu .ba-logo {
 		display: none;
@@ -181,6 +197,9 @@ p, ul, ol{
 		width: 200px;
 		z-index: 999;
 		overflow: auto;
+		-moz-transition: right .2s ease-in;
+		-webkit-transition: right .2s ease-in;
+		transition: right .2s ease-in;
 	}
 	.ba-main-menu li{
 		display: block;
@@ -222,30 +241,25 @@ p, ul, ol{
 		        transform: rotate(90deg);
 	}
 	body {
-		-moz-transition: -moz-transform .2s ease-in;
-		-webkit-transition: -webkit-transform .2s ease-in;
-		transition: transform .2s ease-in;
+		-moz-transition: left .2s ease-in;
+		-webkit-transition: left .2s ease-in;
+		transition: left .2s ease-in;
+	    position: relative;
+	    left: 0;
 	}
 	.ba-menu-open{
-		-webkit-transform: translateX(-200px);
-		   -moz-transform: translateX(-200px);
-		    -ms-transform: translateX(-200px);
-		     -o-transform: translateX(-200px);
-		        transform: translateX(-200px);
+		left: -200px;
 	}
 	.ba-menu-open .ba-main-menu{
-
+		right: 0;
 	}
-
+	.ba-menu-open .ba-overlay {
+		visibility: visible;
+		opacity: 1;
+	}
 	.ba-logo-mobile {
 		display: block;
 	}
-
-
-
-
-
-
 }
 .ba-menu-toggle:before {
 	content: "";
@@ -393,6 +407,8 @@ p, ul, ol{
 	right: 0;
 	bottom: 0;
 	top: 0;
+
+	background: #64C29E;
 	background: rgba(100, 194, 158, 0.8);
 	text-align: center;
 	font-size: 0;
